@@ -13,6 +13,7 @@ class IPGET{
     public function retriveIPInformation(){
         $ch = curl_init();
 
+        //SET YOUR API KEY IN THE LINK.
         curl_setopt($ch, CURLOPT_URL, 'https://geo.ipify.org/api/v2/country,city?apiKey=APIKEY&ipAddress=' . $_SERVER['REMOTE_ADDR']);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
@@ -45,7 +46,7 @@ class IPGET{
             $this->media = $dataDecoded->location->region;
     }
 
-    //Set all values:
+    //Showing all values:
 
     public function showIP(){
         return $this->ip;
